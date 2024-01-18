@@ -8,6 +8,19 @@ function compressing(upload) {
         upload(taskCompleted);
     }, 3000)
 }
+compressing((taskCompleted)=> {
+    setTimeout(() => {
+        console.log('Compressing the video...');
+        taskCompleted();
+    }, 3000)
+},
+() => {
+    setTimeout(() => {
+        console.log("Task completed");
+    }, 5000)
+    }
+)
+
 
 // Define a function named 'uploading'
 function uploading() {
