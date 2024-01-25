@@ -1,16 +1,18 @@
-// Function that takes a callback as an argument and executes it after a delay
-function delayedExecution(callback, delay) {
-    setTimeout(function() {
-      console.log(`Executing callback after ${delay} milliseconds`);
-      callback(); // Calling the callback function
-    }, delay);
-  }
-  
-  // Callback function to be executed
-  function myCallback() {
-    console.log("Callback function executed!");
-  }
-  
-  // Using the delayedExecution function with myCallback as the callback
-  delayedExecution(myCallback, 2000); // The callback will be executed after a 2000 ms (2 seconds) delay
-  
+function compressing(uploading, taskCompleted) {
+    setTimeout(() => {
+        console.log('Compressing the video...');
+        uploading(taskCompleted);
+    }, 3000)
+}
+compressing((taskCompleted) => {  
+    setTimeout(() => {
+        console.log('Uploading the video...');
+        taskCompleted();
+    }, 3000)
+},  
+() => {
+    setTimeout(() => {
+        console.log("Task completed");
+    }, 5000)
+  } 
+)
