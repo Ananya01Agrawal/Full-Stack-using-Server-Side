@@ -1,9 +1,23 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+let task=[]
 const port = 3000;
 //app.use is a method inbuilt in express to register a middleware. Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
 
+// sending the post request
+app.post("/addtask", (req, res) => {
+    console.log(req.body);//information coming in object form
+    task.push(req.body.task);
+    res.redirect("/gettask");
+});
+
+// creating the another path to send the request
+app.get("/gettask", (req, res) => {
+    res.send(task);
+});
+
+app.use(express.urlencoded({ extended:true}));// to parse the data from the url
 app.use(express.static(path.join(__dirname, "public")));//to use the static files like css,js,images,etc we use the express.static() method
 //__dirname is a global object that contains the path of the current directory.
 //path.join() method joins all given path segments together using the platform-specific separator as a delimiter, then normalizes the resulting path.
@@ -26,6 +40,19 @@ app.get("/style.css",(req,res) => {
 app.get("/script.js", (req, res) => {
     res.sendFile(path.join(__dirname, "script.js"));
 });
+
+// sennding the request through parameters
+app.get("/path/:name/:class", (req, res) => {
+    console.log(req.params);
+    res.send(req.params);
+});
+
+// sending the request through query
+app.get("/query", (req, res) => {
+    console.log(req.query);
+    res.send(req.query);
+});
+
 // app.listen is a method that starts a UNIX socket and listens for connections on the given path.and also monitor the port for incoming requests
 // In app.listen we pass the port number and a callback function that will be called when the server starts listening for requests.
 app.listen(port, () => {
