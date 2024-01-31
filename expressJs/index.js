@@ -6,15 +6,23 @@ const port = 3000;
 //app.use is a method inbuilt in express to register a middleware. Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application’s request-response cycle.
 
 // sending the post request
+// app.post("/addtask", (req, res) => {
+//     console.log(req.body);//information coming in object form
+//     task.push(req.body.task);
+//     res.redirect("/gettask");
+// });
+
+// // creating the another path to send the request
+// app.get("/gettask", (req, res) => {
+//     res.send(task);
+// });
+
+// In post method we receive the data in the form of object so we have to use the body-parser to parse the data from the url
+// In get method we receive the data in the form of query so we have to use the query-parser to parse the data from the url
 app.post("/addtask", (req, res) => {
-    console.log(req.body);//information coming in object form
+    console.log(req.body);
     task.push(req.body.task);
     res.redirect("/gettask");
-});
-
-// creating the another path to send the request
-app.get("/gettask", (req, res) => {
-    res.send(task);
 });
 
 app.use(express.urlencoded({ extended:true}));// to parse the data from the url
@@ -26,6 +34,16 @@ app.use("/",(req,res,next) => {
     next();
     //res.send("Hello World");//for receiving the request and sending the response
 })
+//creating the params
+// app.get("/user/:name/:class",(req,res) => {
+//     console.log(req.params);
+//     res.send(req.params);
+// })
+
+app.get("/path2", (req, res) => {
+    console.log(req.query);
+    //res.send(req.query);
+});
 
 // to send the response we use the get method
 app.get("/",(req,res) => {
