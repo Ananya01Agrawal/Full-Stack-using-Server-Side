@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogPage</title>
+    <title>Add Blog</title>
 </head>
+<h1>Add Blog</h1>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/getblogs">getblog</a></li>
+        </ul>
+    </nav>
+</header>
 <body>
-    <header>
-        <nav>
-            <li><a href="/">AddBlogs</a></li>
-            <li><a href="/getblogs">Getblogs</a></li>
-        </nav>
-    </header>
-<h1>blogpage</h1>
-<form action="/addblogs" method="post">
-    <label for="author">Author:-</label>
-    <input type="text" name="author" id="author"><br>
+    <form action="/addblog" method="post">
+        <label for="name">Name:-</label>
+        <input type="text" id="name" name="name"><br>
 
-    <label for="cateogry">cateogry:-</label>
-    <input type="text" name="cateogry" id="cateogry"><br>
+        <label for="Class">Class</label>
+        <input type="text" id="Class" name="Class"><br>
 
-    <label for="blog">Blog:-</label>
-    <textarea name="blog" id="blog" cols="30" rows="10"></textarea>
+        <label for="blog">blog</label>
+       <textarea name="blog" id="blog" cols="30" rows="10"></textarea>
 
-    <button type="submit">Submit</button>
-</form>
-
+        <button>Submit</button>
+    </form>
 </body>
 </html>
