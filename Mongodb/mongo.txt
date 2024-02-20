@@ -1,0 +1,13 @@
+1. To show the databases: show dbs 
+    2. To use a database: use <database_name> 
+    3. To show the collections: show collections 
+    4. To insert a document: db.<collection_name>.insert({<key>:<value>}) 
+        To insert multiple documents: db.<collection_name>.insert([{<key>:<value>}, {<key>:<value>}, {<key>:<value>}])
+    5. To find a document: db.<collection_name>.find()
+        To search particular document: db.<collection_name>.find({<key>:<value>})
+    6. To update a document: db.<collection_name>.update({<key>:<value>}, {$set:{<key>:<value>}}) 
+    7. To remove a document: db.<collection_name>.remove({<key>:<value>}) 
+    8. To drop a collection: db.<collection_name>.drop() 
+    9. To drop a database: db.dropDatabase() 
+    10. To exit from the mongo shell: exit 
+    
