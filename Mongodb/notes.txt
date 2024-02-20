@@ -1,0 +1,16 @@
+//differnce between Sql and NoSql databases
+
+1.Sql databases are primarily called as Relational Databases (RDBMS); whereas NoSql database are primarily called as non-relational or distributed database.
+
+2.Sql databases are table based databases; whereas NoSql databases are document based, key-value pairs, graph databases or wide-column stores.
+
+3.Sql databases have predefined schema; whereas NoSql databases have dynamic schema for unstructured data.
+
+4.Sql databases are vertically scalable; whereas NoSql databases are horizontally scalable.
+
+5.Sql databases uses SQL ( structured query language ) for defining and manipulating the data, which is very powerful; whereas NoSql database are primarily called as non-relational or distributed database.
+
+6.Sql databases are good fit for the complex query intensive environment; whereas NoSql databases are not good fit for complex queries.
+
+7.Sql databases are not best fit for hierarchical data storage; whereas NoSql databases are fit for hierarchical data storage as it supports key-value pair storage.
+
