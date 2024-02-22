@@ -9,5 +9,6 @@
     7. To remove a document: db.<collection_name>.remove({<key>:<value>}) 
     8. To drop a collection: db.<collection_name>.drop() 
     9. To drop a database: db.dropDatabase() 
-    10. To exit from the mongo shell: exit 
+    10. To exit from the mongo shell: exit  
+    11.
     
