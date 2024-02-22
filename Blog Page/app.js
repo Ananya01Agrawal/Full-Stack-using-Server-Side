@@ -43,7 +43,8 @@ app.post("/addblog", async (req, res) => {
 
 
 app.get("/getblog", async (req, res) => {
-  let blogs = await Blog.find()
+  let blogs = await Blog.find()// used for finding the data and blog.find also return the promise
+  // and blog.find() return an array 
   res.render("blogpage", {
     blogs: blogs
   })
@@ -59,7 +60,7 @@ app.get("/delete/:blogId", async (req, res) => {
 
 app.get("/update/:blogId", async (req, res) => {
   let blogId = req.params.blogId
-  let updateblog = await Blog.findOne({ blogId })
+  let updateblog = await Blog.findOne({ blogId })// findOne return the object and find return the array
   // const updateblog = blogs.filter((item) => item.blogId == req.params.blogId)
   // console.log(updateblog);
   res.render("updateblog", {

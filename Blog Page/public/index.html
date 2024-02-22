@@ -4,18 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Blog</title>
+    <title>Manage Blogs</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<header>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/getblog">getblog</a></li>
-        </ul>
-    </nav>
-</header>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/getblog">Get Blogs</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <h1>Add Blog</h1>
     <form action="/addblog" method="post">
         <label for="name">Name:-</label>
@@ -29,6 +31,21 @@
 
         <button>Submit</button>
     </form>
+
+    <hr>
+
+    <h1>Update Blog</h1>
+    <form action="/updateblog" method="post">
+        <!-- Update blog form goes here -->
+    </form>
+
+    <hr>
+
+    <h1>Delete Blog</h1>
+    <form action="/deleteblog" method="post">
+        <!-- Delete blog form goes here -->
+    </form>
+
 </body>
 
 </html>
